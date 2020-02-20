@@ -20,6 +20,7 @@ namespace Domain.Entities
         public List<string> PhotoLinks { get; private set; }
         public Dictionary<string,string> Features { get; private set; }
         public int TypeId { get; set; }
+        public int AddressId { get; set; }
         public int AgentId { get; set; }
     }
 }
