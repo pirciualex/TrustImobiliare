@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Domain.Entities
+namespace TrustImobiliare.Domain.Entities
 {
     public abstract class Property
     {

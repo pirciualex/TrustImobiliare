@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4098D5F9-E171-4522-85D1-564ECEF4DA52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{045C53A8-E191-4EFC-8BFC-70714C9A7D7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustImobiliare.Domain", "src\Domain\TrustImobiliare.Domain.csproj", "{045C53A8-E191-4EFC-8BFC-70714C9A7D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{04AC6A59-3DB0-4307-B1C8-F194ACCE6535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,7 +24,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{045C53A8-E191-4EFC-8BFC-70714C9A7D7F} = {4098D5F9-E171-4522-85D1-564ECEF4DA52}
+		{045C53A8-E191-4EFC-8BFC-70714C9A7D7F} = {04AC6A59-3DB0-4307-B1C8-F194ACCE6535}
+		{04AC6A59-3DB0-4307-B1C8-F194ACCE6535} = {4098D5F9-E171-4522-85D1-564ECEF4DA52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42F06EC3-FEDE-464C-9821-D07FEBB07C0B}

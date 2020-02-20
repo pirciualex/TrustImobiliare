@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities
+﻿namespace TrustImobiliare.Domain.Entities
 {
     public class Household:Property
     {
