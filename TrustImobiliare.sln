@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4098D5F9-E171-4522-85D1-564ECEF4DA52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustImobiliare.Domain", "src\Domain\TrustImobiliare.Domain.csproj", "{045C53A8-E191-4EFC-8BFC-70714C9A7D7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustImobiliare.Domain", "src\TrustImobiliare.Domain\TrustImobiliare.Domain.csproj", "{045C53A8-E191-4EFC-8BFC-70714C9A7D7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{04AC6A59-3DB0-4307-B1C8-F194ACCE6535}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{35FBAA37-C833-4D42-A1A8-BEFFE1D39079}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustImobiliare.WebUI", "TrustImobiliare.WebUI\TrustImobiliare.WebUI.csproj", "{4B0009EE-F844-4C9B-9171-8CA8B622182F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustImobiliare.WebUI", "src\TrustImobiliare.WebUI\TrustImobiliare.WebUI.csproj", "{4B0009EE-F844-4C9B-9171-8CA8B622182F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
