@@ -6,8 +6,7 @@ namespace TrustImobiliare.Domain.Entities
     {
         protected Property()
         {
-            PhotoLinks = new List<string>();
-            Features = new Dictionary<string, string>();
+            Features = new List<Feature>();
         }
 
         public int Id { get; set; }
@@ -17,8 +16,8 @@ namespace TrustImobiliare.Domain.Entities
         public decimal Price { get; set; }
         public int Surface { get; set; }
         public string PrimaryPhotoLink { get; set; }
-        public List<string> PhotoLinks { get; private set; }
-        public Dictionary<string,string> Features { get; private set; }
+        public string PhotoLinks { get; set; }
+        public IEnumerable<Feature> Features { get; private set; }
         public int TypeId { get; set; }
         public int AddressId { get; set; }
         public int AgentId { get; set; }
