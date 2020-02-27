@@ -4,11 +4,6 @@ namespace TrustImobiliare.Domain.Entities
 {
     public abstract class Property
     {
-        protected Property()
-        {
-            Features = new List<Feature>();
-        }
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,9 +12,12 @@ namespace TrustImobiliare.Domain.Entities
         public int Surface { get; set; }
         public string PrimaryPhotoLink { get; set; }
         public string PhotoLinks { get; set; }
-        public IEnumerable<Feature> Features { get; private set; }
-        public int TypeId { get; set; }
-        public int AddressId { get; set; }
-        public int AgentId { get; set; }
+        public int? Rooms { get; set; }
+        public int? Bathrooms { get; set; }
+        public int? Year { get; set; }
+        public IEnumerable<Feature> Features { get; set; } = new List<Feature>();
+        public Type Type { get; set; }
+        public Address Address { get; set; }
+        public Agent Agent { get; set; }
     }
 }

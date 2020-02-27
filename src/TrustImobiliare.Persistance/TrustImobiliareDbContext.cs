@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TrustImobiliare.Domain.Entities;
 
-namespace Persistance
+namespace TrustImobiliare.Persistance
 {
     public class TrustImobiliareDbContext : DbContext
     {
@@ -10,8 +10,7 @@ namespace Persistance
 
         }
 
-        public DbSet<Household> Households { get; set; }
-        public DbSet<Field> Fields { get; set; }
+        public DbSet<Property> Properties { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Type> Types { get; set; }
     }
