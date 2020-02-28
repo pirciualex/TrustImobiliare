@@ -8,6 +8,8 @@ namespace TrustImobiliare.Persistance.Configurations
     {
         public void Configure(EntityTypeBuilder<Feature> builder)
         {
+            builder.Property(e => e.FeatureId).HasColumnName("FeatureID");
+            builder.Property(e => e.PropertyId).HasColumnName("PropertyID");
             builder.HasOne(d => d.Property)
                 .WithMany(p => p.Features)
                 .HasForeignKey(d => d.PropertyId)
