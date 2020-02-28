@@ -4,7 +4,7 @@ using TrustImobiliare.Domain.Entities;
 
 namespace TrustImobiliare.Persistance.Configurations
 {
-    public class FeatureConfiguration:IEntityTypeConfiguration<Feature>
+    public class FeatureConfiguration : IEntityTypeConfiguration<Feature>
     {
         public void Configure(EntityTypeBuilder<Feature> builder)
         {
