@@ -10,8 +10,10 @@ namespace TrustImobiliare.Persistance
 
         }
 
-        public DbSet<Property> Properties { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Agent> Agents { get; set; }
+        public DbSet<Feature> Features { get; set; }
+        public DbSet<Property> Properties { get; set; }
         public DbSet<Type> Types { get; set; }
     }
 }
