@@ -3,6 +3,7 @@
     public class Address
     {
         public int AddressId { get; set; }
+        public int PropertyId { get; set; }
         public string Country { get; set; }
         public string Region { get; set; }
         public string City { get; set; }
