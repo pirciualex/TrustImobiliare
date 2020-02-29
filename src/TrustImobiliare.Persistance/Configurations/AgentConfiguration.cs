@@ -9,7 +9,6 @@ namespace TrustImobiliare.Persistance.Configurations
         public void Configure(EntityTypeBuilder<Agent> builder)
         {
             builder.Property(e => e.AgentId).HasColumnName("AgentId");
-            builder.Property(e => e.PropertyId).HasColumnName("PropertyID");
             builder.Property(e => e.FirstName)
                 .IsRequired()
                 .HasMaxLength(20);
