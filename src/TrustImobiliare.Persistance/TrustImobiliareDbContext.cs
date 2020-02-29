@@ -15,5 +15,10 @@ namespace TrustImobiliare.Persistance
         public DbSet<Feature> Features { get; set; }
         public DbSet<Property> Properties { get; set; }
         public DbSet<Type> Types { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(TrustImobiliareDbContext).Assembly);
+        }
     }
 }
