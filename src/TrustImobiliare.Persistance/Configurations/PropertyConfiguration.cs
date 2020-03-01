@@ -10,6 +10,7 @@ namespace TrustImobiliare.Persistance.Configurations
         {
             builder.Property(e => e.PropertyId).HasColumnName("PropertyID");
             builder.Property(e => e.AgentId).HasColumnName("AgentID");
+            builder.Property(e => e.TypeId).HasColumnName("TypeID");
             builder.Property(e => e.Name)
                 .IsRequired()
                 .HasMaxLength(40);
@@ -33,8 +34,8 @@ namespace TrustImobiliare.Persistance.Configurations
                 .HasForeignKey(d => d.AgentId)
                 .HasConstraintName("FK_Properties_Agents");
             builder.HasOne(d => d.Type)
-                .WithOne(p => p.Property)
-                .HasForeignKey<Type>(d => d.PropertyId)
+                .WithMany(p => p.Properties)
+                .HasForeignKey(d => d.TypeId)
                 .HasConstraintName("FK_Properties_Types");
         }
     }

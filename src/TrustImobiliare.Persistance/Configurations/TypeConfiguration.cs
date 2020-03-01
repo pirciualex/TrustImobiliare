@@ -9,7 +9,6 @@ namespace TrustImobiliare.Persistance.Configurations
         public void Configure(EntityTypeBuilder<Type> builder)
         {
             builder.Property(e => e.TypeId).HasColumnName("TypeID");
-            builder.Property(e => e.PropertyId).HasColumnName("PropertyID");
         }
     }
 }
