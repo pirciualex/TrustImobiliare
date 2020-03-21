@@ -22,13 +22,27 @@ namespace TrustImobiliare.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Types",
+                columns: table => new
+                {
+                    TypeID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Types", x => x.TypeID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Properties",
                 columns: table => new
                 {
                     PropertyID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "65536, 427"),
                     AgentID = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(maxLength: 40, nullable: false),
+                    TypeID = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(maxLength: 60, nullable: false),
                     Description = table.Column<string>(type: "ntext", nullable: true),
                     Status = table.Column<string>(maxLength: 13, nullable: false),
                     Price = table.Column<decimal>(type: "money", nullable: false),
@@ -47,6 +61,12 @@ namespace TrustImobiliare.Persistance.Migrations
                         column: x => x.AgentID,
                         principalTable: "Agents",
                         principalColumn: "AgentId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Properties_Types",
+                        column: x => x.TypeID,
+                        principalTable: "Types",
+                        principalColumn: "TypeID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -94,26 +114,6 @@ namespace TrustImobiliare.Persistance.Migrations
                         principalColumn: "PropertyID");
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Types",
-                columns: table => new
-                {
-                    TypeID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PropertyID = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Types", x => x.TypeID);
-                    table.ForeignKey(
-                        name: "FK_Properties_Types",
-                        column: x => x.PropertyID,
-                        principalTable: "Properties",
-                        principalColumn: "PropertyID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Addresses_PropertyID",
                 table: "Addresses",
@@ -131,10 +131,9 @@ namespace TrustImobiliare.Persistance.Migrations
                 column: "AgentID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Types_PropertyID",
-                table: "Types",
-                column: "PropertyID",
-                unique: true);
+                name: "IX_Properties_TypeID",
+                table: "Properties",
+                column: "TypeID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -146,13 +145,13 @@ namespace TrustImobiliare.Persistance.Migrations
                 name: "Features");
 
             migrationBuilder.DropTable(
-                name: "Types");
-
-            migrationBuilder.DropTable(
                 name: "Properties");
 
             migrationBuilder.DropTable(
                 name: "Agents");
+
+            migrationBuilder.DropTable(
+                name: "Types");
         }
     }
 }

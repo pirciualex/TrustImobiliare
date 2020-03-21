@@ -10,7 +10,7 @@ using TrustImobiliare.Persistance;
 namespace TrustImobiliare.Persistance.Migrations
 {
     [DbContext(typeof(TrustImobiliareDbContext))]
-    [Migration("20200229234738_InitialCreate")]
+    [Migration("20200321171858_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,6 +121,8 @@ namespace TrustImobiliare.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnName("PropertyID")
                         .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 427)
+                        .HasAnnotation("SqlServer:IdentitySeed", 65536)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("AgentId")
@@ -135,8 +137,8 @@ namespace TrustImobiliare.Persistance.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(40)")
-                        .HasMaxLength(40);
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
 
                     b.Property<string>("PhotoLinks")
                         .HasColumnType("nvarchar(max)");
@@ -160,12 +162,18 @@ namespace TrustImobiliare.Persistance.Migrations
                     b.Property<int>("Surface")
                         .HasColumnType("int");
 
+                    b.Property<int>("TypeId")
+                        .HasColumnName("TypeID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Year")
                         .HasColumnType("int");
 
                     b.HasKey("PropertyId");
 
                     b.HasIndex("AgentId");
+
+                    b.HasIndex("TypeId");
 
                     b.ToTable("Properties");
                 });
@@ -181,14 +189,7 @@ namespace TrustImobiliare.Persistance.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PropertyId")
-                        .HasColumnName("PropertyID")
-                        .HasColumnType("int");
-
                     b.HasKey("TypeId");
-
-                    b.HasIndex("PropertyId")
-                        .IsUnique();
 
                     b.ToTable("Types");
                 });
@@ -221,13 +222,10 @@ namespace TrustImobiliare.Persistance.Migrations
                         .HasConstraintName("FK_Properties_Agents")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("TrustImobiliare.Domain.Entities.Type", b =>
-                {
-                    b.HasOne("TrustImobiliare.Domain.Entities.Property", "Property")
-                        .WithOne("Type")
-                        .HasForeignKey("TrustImobiliare.Domain.Entities.Type", "PropertyId")
+                    b.HasOne("TrustImobiliare.Domain.Entities.Type", "Type")
+                        .WithMany("Properties")
+                        .HasForeignKey("TypeId")
                         .HasConstraintName("FK_Properties_Types")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
