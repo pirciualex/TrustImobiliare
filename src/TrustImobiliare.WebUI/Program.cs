@@ -19,6 +19,8 @@ namespace TrustImobiliare.WebUI
                 context.Database.Migrate();
                 Seed.Initialize(context);
             }
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)

@@ -8,12 +8,14 @@ namespace TrustImobiliare.Persistance.Configurations
     {
         public void Configure(EntityTypeBuilder<Property> builder)
         {
-            builder.Property(e => e.PropertyId).HasColumnName("PropertyID");
+            builder.Property(e => e.PropertyId)
+                .HasColumnName("PropertyID")
+                .UseIdentityColumn(65536,427);
             builder.Property(e => e.AgentId).HasColumnName("AgentID");
             builder.Property(e => e.TypeId).HasColumnName("TypeID");
             builder.Property(e => e.Name)
                 .IsRequired()
-                .HasMaxLength(40);
+                .HasMaxLength(60);
             builder.Property(e => e.Description).HasColumnType("ntext");
             builder.Property(e => e.Price)
                 .IsRequired()
