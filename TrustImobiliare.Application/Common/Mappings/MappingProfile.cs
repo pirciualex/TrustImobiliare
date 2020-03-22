@@ -13,6 +13,12 @@ namespace TrustImobiliare.Application.Common.Mappings
                     opt.MapFrom(src => src.Type.Name))
                 .ForMember(dest => dest.AgentName, opt =>
                     opt.MapFrom(src => $"{src.Agent.LastName} {src.Agent.FirstName}"));
+
+            CreateMap<Property, PropertyDetailDto>()
+                .ForMember(dest => dest.Address, opt =>
+                    opt.MapFrom(src => $"{src.Address.AddressDetail}, {src.Address.City}"))
+                .ForMember(dest => dest.Type, opt =>
+                    opt.MapFrom(src => src.Type.Name));
         }
     }
 }
