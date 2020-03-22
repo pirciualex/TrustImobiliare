@@ -7,7 +7,7 @@ using TrustImobiliare.Application.Properties.Queries.GetPropertiesList;
 
 namespace TrustImobiliare.WebUI.Controllers
 {
-    [Route("properties")]
+    [Route("api/properties")]
     public class PropertiesController : ControllerBase
     {
         private readonly IMediator _mediator;
