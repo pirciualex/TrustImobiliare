@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TrustImobiliare.Application.Properties.Dtos;
 using TrustImobiliare.Application.Properties.Queries.GetPropertiesList;
+using TrustImobiliare.Application.Properties.Queries.GetPropertyDetail;
 
 namespace TrustImobiliare.WebUI.Controllers
 {
@@ -24,6 +25,19 @@ namespace TrustImobiliare.WebUI.Controllers
             var response = await _mediator.Send(query);
             return Ok(response);
 
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<PropertyDetailDto>> GetPropertyAsync(int id)
+        {
+            var query = new GetPropertyDetailQuery(id);
+            var response = await _mediator.Send(query);
+            if (response == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(response);
         }
     }
 }
