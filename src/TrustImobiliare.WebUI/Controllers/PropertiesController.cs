@@ -46,7 +46,7 @@ namespace TrustImobiliare.WebUI.Controllers
         public async Task<ActionResult<PropertyDetailDto>> PostPropertyAsync([FromBody] CreatePropertyCommand request)
         {
             var response = await _mediator.Send(request);
-            return CreatedAtRoute("GetProperty", new { propertyId = response.PropertyId }, response);
+            return CreatedAtRoute("GetProperty", new { id = response.PropertyId }, response);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TrustImobiliare.Application.Properties.Commands.CreateProperty;
 using TrustImobiliare.Application.Properties.Dtos;
 using TrustImobiliare.Domain.Entities;
 
@@ -19,6 +20,8 @@ namespace TrustImobiliare.Application.Common.Mappings
                     opt.MapFrom(src => $"{src.Address.AddressDetail}, {src.Address.City}"))
                 .ForMember(dest => dest.Type, opt =>
                     opt.MapFrom(src => src.Type.Name));
+
+            CreateMap<CreatePropertyCommand, Property>();
         }
     }
 }
