@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using TrustImobiliare.Domain.Entities;
 
 namespace TrustImobiliare.Application.Properties.Dtos
 {
@@ -18,7 +17,7 @@ namespace TrustImobiliare.Application.Properties.Dtos
         public int? Year { get; set; }
         public string Address { get; set; }
         public string Type { get; set; }
-        public IEnumerable<Feature> Features { get; set; } = new List<Feature>();
-        public Agent Agent { get; set; }
+        public IEnumerable<FeatureDto> Features { get; set; } = new List<FeatureDto>();
+        public AgentDto Agent { get; set; }
     }
 }

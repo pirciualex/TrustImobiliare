@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrustImobiliare.Persistance", "src\TrustImobiliare.Persistance\TrustImobiliare.Persistance.csproj", "{33DDA283-E2B1-419A-8974-E047C12A0F10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustImobiliare.Application", "TrustImobiliare.Application\TrustImobiliare.Application.csproj", "{F59D5E4C-0F06-4E40-9A94-8ABE48EE2C41}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustImobiliare.Application", "src\TrustImobiliare.Application\TrustImobiliare.Application.csproj", "{F59D5E4C-0F06-4E40-9A94-8ABE48EE2C41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

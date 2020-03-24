@@ -22,6 +22,8 @@ namespace TrustImobiliare.Application.Common.Mappings
                     opt.MapFrom(src => src.Type.Name));
 
             CreateMap<CreatePropertyCommand, Property>();
+            CreateMap<Feature, FeatureDto>();
+            CreateMap<Agent, AgentDto>();
         }
     }
 }

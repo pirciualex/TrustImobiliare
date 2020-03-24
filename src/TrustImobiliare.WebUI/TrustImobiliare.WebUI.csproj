@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TrustImobiliare.Application\TrustImobiliare.Application.csproj" />
+    <ProjectReference Include="..\TrustImobiliare.Application\TrustImobiliare.Application.csproj" />
     <ProjectReference Include="..\TrustImobiliare.Persistance\TrustImobiliare.Persistance.csproj" />
   </ItemGroup>
 

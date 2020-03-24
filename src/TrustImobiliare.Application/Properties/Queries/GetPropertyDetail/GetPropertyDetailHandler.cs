@@ -2,6 +2,7 @@
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using TrustImobiliare.Application.Properties.Dtos;
 using TrustImobiliare.Persistance;
 
@@ -20,7 +21,12 @@ namespace TrustImobiliare.Application.Properties.Queries.GetPropertyDetail
 
         public async Task<PropertyDetailDto> Handle(GetPropertyDetailQuery request, CancellationToken cancellationToken)
         {
-            var property = await _context.Properties.FindAsync(request.Id);
+            var property = await _context.Properties
+                .Include(p => p.Address)
+                .Include(p => p.Agent)
+                .Include(p => p.Features)
+                .Include(p => p.Type)
+                .FirstOrDefaultAsync(p => p.PropertyId == request.Id);
             if (property == null)
             {
                 return null;

@@ -12,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\TrustImobiliare.Domain\TrustImobiliare.Domain.csproj" />
-    <ProjectReference Include="..\src\TrustImobiliare.Persistance\TrustImobiliare.Persistance.csproj" />
+    <ProjectReference Include="..\TrustImobiliare.Persistance\TrustImobiliare.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

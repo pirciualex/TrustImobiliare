@@ -17,9 +17,9 @@ namespace TrustImobiliare.Domain.Entities
         public int? Rooms { get; set; }
         public int? Bathrooms { get; set; }
         public int? Year { get; set; }
-        public IEnumerable<Feature> Features { get; set; } = new List<Feature>();
-        public Type Type { get; set; }
-        public Address Address { get; set; }
-        public Agent Agent { get; set; }
+        public virtual IEnumerable<Feature> Features { get; set; } = new List<Feature>();
+        public virtual Type Type { get; set; }
+        public virtual Address Address { get; set; }
+        public virtual Agent Agent { get; set; }
     }
 }
