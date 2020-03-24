@@ -21,6 +21,11 @@ namespace TrustImobiliare.Application.Properties.Queries.GetPropertyDetail
         public async Task<PropertyDetailDto> Handle(GetPropertyDetailQuery request, CancellationToken cancellationToken)
         {
             var property = await _context.Properties.FindAsync(request.Id);
+            if (property == null)
+            {
+                return null;
+            }
+
             var propertyResponse = _mapper.Map<PropertyDetailDto>(property);
             return propertyResponse;
         }
