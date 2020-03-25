@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TrustImobiliare.Application.Properties.Commands.CreateProperty;
+using TrustImobiliare.Application.Properties.Commands.UpdateProperty;
 using TrustImobiliare.Application.Properties.Dtos;
 using TrustImobiliare.Application.Properties.Queries.GetPropertiesList;
 using TrustImobiliare.Application.Properties.Queries.GetPropertyDetail;
@@ -47,6 +48,18 @@ namespace TrustImobiliare.WebUI.Controllers
         {
             var response = await _mediator.Send(request);
             return CreatedAtRoute("GetProperty", new { id = response.PropertyId }, response);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutPropertyAsync(int id, [FromBody] UpdatePropertyCommand request)
+        {
+            request.PropertyId = id;
+            var response = await _mediator.Send(request);
+            if (!response)
+            {
+                return NotFound();
+            }
+            return NoContent();
         }
     }
 }
