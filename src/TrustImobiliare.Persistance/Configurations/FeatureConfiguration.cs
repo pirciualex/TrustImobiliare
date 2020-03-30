@@ -13,7 +13,6 @@ namespace TrustImobiliare.Persistance.Configurations
             builder.HasOne(d => d.Property)
                 .WithMany(p => p.Features)
                 .HasForeignKey(d => d.PropertyId)
-                .OnDelete(DeleteBehavior.NoAction)
                 .HasConstraintName("FK_Features_Properties");
         }
     }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using TrustImobiliare.Application.Properties.Commands.CreateProperty;
+using TrustImobiliare.Application.Properties.Commands.UpdateProperty;
 using TrustImobiliare.Application.Properties.Dtos;
 using TrustImobiliare.Domain.Entities;
 
@@ -22,6 +23,8 @@ namespace TrustImobiliare.Application.Common.Mappings
                     opt.MapFrom(src => src.Type.Name));
 
             CreateMap<CreatePropertyCommand, Property>();
+            CreateMap<UpdatePropertyCommand, Property>();
+
             CreateMap<Feature, FeatureDto>();
             CreateMap<Agent, AgentDto>();
         }

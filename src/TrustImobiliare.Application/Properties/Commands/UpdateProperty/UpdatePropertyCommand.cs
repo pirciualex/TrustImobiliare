@@ -7,7 +7,6 @@ namespace TrustImobiliare.Application.Properties.Commands.UpdateProperty
     public class UpdatePropertyCommand : IRequest<bool>
     {
         public int PropertyId { get; set; }
-        public int AgentId { get; set; }
         public int TypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
