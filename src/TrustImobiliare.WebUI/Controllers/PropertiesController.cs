@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TrustImobiliare.Application.Properties.Commands.CreateProperty;
+using TrustImobiliare.Application.Properties.Commands.DeleteProperty;
 using TrustImobiliare.Application.Properties.Commands.UpdateProperty;
 using TrustImobiliare.Application.Properties.Dtos;
 using TrustImobiliare.Application.Properties.Queries.GetPropertiesList;
@@ -55,6 +56,17 @@ namespace TrustImobiliare.WebUI.Controllers
         {
             request.PropertyId = id;
             var response = await _mediator.Send(request);
+            if (!response)
+            {
+                return NotFound();
+            }
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePropertyAsync(int id)
+        {
+            var response = await _mediator.Send(new DeletePropertyCommand { PropertiId = id });
             if (!response)
             {
                 return NotFound();
