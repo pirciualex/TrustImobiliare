@@ -35,8 +35,8 @@ namespace TrustImobiliare.Persistance
         {
             var types = new List<Type>
             {
-                new Type {Name = "teren"},
                 new Type {Name = "apartament"},
+                new Type {Name = "teren"},
                 new Type {Name = "garsonieră"},
                 new Type {Name = "casă"},
                 new Type {Name = "spațiu comercial"},
