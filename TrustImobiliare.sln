@@ -19,6 +19,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrustImobiliare.Persistance
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrustImobiliare.Application", "src\TrustImobiliare.Application\TrustImobiliare.Application.csproj", "{F59D5E4C-0F06-4E40-9A94-8ABE48EE2C41}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TrustImobiliare.ClientApp", "src\TrustImobiliare.ClientApp\", "{B6F5D616-B057-4AE5-8534-4D15D787E6F3}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53934"
+		Debug.AspNetCompiler.PhysicalPath = "src\TrustImobiliare.ClientApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53934\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53934"
+		Release.AspNetCompiler.PhysicalPath = "src\TrustImobiliare.ClientApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53934\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53934"
+		SlnRelativePath = "src\TrustImobiliare.ClientApp\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +62,10 @@ Global
 		{F59D5E4C-0F06-4E40-9A94-8ABE48EE2C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F59D5E4C-0F06-4E40-9A94-8ABE48EE2C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F59D5E4C-0F06-4E40-9A94-8ABE48EE2C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F5D616-B057-4AE5-8534-4D15D787E6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F5D616-B057-4AE5-8534-4D15D787E6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F5D616-B057-4AE5-8534-4D15D787E6F3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F5D616-B057-4AE5-8534-4D15D787E6F3}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +78,7 @@ Global
 		{83D15837-6E74-4E7D-8B80-21F3DA2A9E17} = {4098D5F9-E171-4522-85D1-564ECEF4DA52}
 		{33DDA283-E2B1-419A-8974-E047C12A0F10} = {83D15837-6E74-4E7D-8B80-21F3DA2A9E17}
 		{F59D5E4C-0F06-4E40-9A94-8ABE48EE2C41} = {04AC6A59-3DB0-4307-B1C8-F194ACCE6535}
+		{B6F5D616-B057-4AE5-8534-4D15D787E6F3} = {35FBAA37-C833-4D42-A1A8-BEFFE1D39079}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42F06EC3-FEDE-464C-9821-D07FEBB07C0B}
